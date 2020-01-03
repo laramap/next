@@ -69,8 +69,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-          with:
-            fetch-depth: 1
+        with:
+          fetch-depth: 1
       - name: Install front-end dependencies
         run: |
           npm install
