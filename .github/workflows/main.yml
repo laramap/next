@@ -45,17 +45,10 @@ jobs:
     - name: Run Testsuite
       run: vendor/bin/phpunit --testdox
 
-  prepare_and_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
+    - name: Install front-end dependencies
+      run: |
+        npm install
+        npm run production
 
-      - name: Install front-end dependencies
-        run: |
-          npm install
-          npm run production
-
-      - name: Deploy to Laravel Forge
-        run: curl ${{ secrets.FORGE_DEPLOYMENT_WEBHOOK }}
+    - name: Deploy to Laravel Forge
+      run: curl ${{ secrets.FORGE_DEPLOYMENT_WEBHOOK }}
