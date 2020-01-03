@@ -10,7 +10,7 @@ jobs:
   phpunit:
     runs-on: ubuntu-latest
     container:
-      image: kirschbaumdevelopment/laravel-test-runner:7.4.0
+      image: kirschbaumdevelopment/laravel-test-runner:7.3.0
 
     services:
       mysql:
@@ -44,7 +44,7 @@ jobs:
 
     - name: Run Testsuite
       run: vendor/bin/phpunit tests/
-      
+
   dusk:
     runs-on: ubuntu-latest
     container: docker://zaherg/laravel-dusk:latest
@@ -64,7 +64,7 @@ jobs:
           nohup bash -c './vendor/laravel/dusk/bin/chromedriver-linux > /dev/null 2>&1 &'
           nohup bash -c 'php artisan serve > /dev/null 2>&1 &'
           php artisan dusk
-          
+
   prepare_deployment:
     runs-on: ubuntu-latest
     steps:
