@@ -16,10 +16,18 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+import VueMapbox from "vue-mapbox";
+import Mapbox from "mapbox-gl";
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.use(VueMapbox, { mapboxgl: Mapbox });
+
+const files = require.context('./', true, /\.vue$/i);
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+
+Vue.component('passport-clients', require('./components/passport/Clients.vue').default);
+Vue.component('passport-authorized-clients', require('./components/passport/AuthorizedClients.vue').default);
+Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

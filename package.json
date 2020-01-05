@@ -22,5 +22,12 @@
         "sass-loader": "7.*",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "collect.js": "^4.19.0",
+        "imask": "^6.0.0",
+        "mapbox-gl": "^1.6.1",
+        "peity": "^3.3.0",
+        "vue-mapbox": "^0.4.1"
     }
 }

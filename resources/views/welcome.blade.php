@@ -13,7 +13,7 @@
 @endpush
 
 @section('content')
-
+    <user-map></user-map>
 @endsection
 
 @push('footer_scripts')

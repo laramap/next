@@ -29,6 +29,9 @@ class CreateUsersTable extends Migration
             $table->boolean('is_sponsor')->default(false);
             $table->boolean('is_verified')->default(false);
 
+            $table->string('longitude')->nullable();
+            $table->string('latitude')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });

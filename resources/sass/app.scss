@@ -6,3 +6,20 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+body {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 0px;
+}
+
+.map {
+    width: 100vw !important;
+    position: absolute;
+    height: 800px !important;
+}
+
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
